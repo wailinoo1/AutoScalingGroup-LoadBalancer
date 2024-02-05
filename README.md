@@ -15,3 +15,14 @@
 <h2>Module Structure</h2>
 
 ![CHEESE](images/structure.jpg)
+
+<h2>Network Module</h2>
+<p>The Network module was responsible for creating the foundational components of the architecture within the VPC. This included defining the VPC itself, along with the associated subnets, route tables, and Internet Gateway. Two public subnets were designated for the ALB and one for NAT Gateway, while two private subnets were established across different availability zones to host the Auto Scaling Group with Desired 2 EC2 Instances.</p>
+
+<p>In these modules , I've used Terraform Function <b>cidrsubnet</b> to create 4 subnets.This function will generate subnetes with "10.200.0.0/24", "10.200.1.0/24", "10.200.2.0/24", "10.200.3.0/24".</p>
+<p>You can play subnet ranges as you wish for least subnet ranges</p>
+```terraform
+locals {
+  subnet = cidrsubnets(var.vpc_cidr_block,8,8,8,8)
+}
+```

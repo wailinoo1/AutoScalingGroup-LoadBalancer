@@ -11,3 +11,7 @@
 <h2>Pre-requisites</h2>
 <p><b>S3 Bucket:</b> You need to have a S3 Bucket to store Terraform State Files</p>
 <p><b>Certificate:</b> You need to request a certificate in AWS Certificate Manager to associate with Application Load Balancer</p>
+
+<h2>Module Structure</h2>
+
+![CHEESE](images/structure.jpg)

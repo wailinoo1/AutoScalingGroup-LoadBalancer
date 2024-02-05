@@ -27,3 +27,25 @@ locals {
   subnet = cidrsubnets(var.vpc_cidr_block,8,8,8,8)
 }
 ```
+
+<h2>AutoScalingGroup Module</h2>
+<p>The Autoscaling module plays a crucial role in ensuring the scalability and reliability of the infrastructure by automatically adjusting the number of EC2 instances based on demand. By implementing dynamic scaling policies, it optimizes resource utilization, enhances fault tolerance, and maintains consistent performance levels, even during peak periods. Integrated with a Launch Template, it efficiently manages EC2 instance configurations, contributing to high availability and cost optimization. With automated scaling capabilities, the Autoscaling module simplifies infrastructure management while ensuring optimal performance and cost-effectiveness.</p>
+
+<h2>Load Balancer Module</h2>
+<p>The Load Balancer module was responsible for setting up the Application Load Balancer (ALB) to evenly distribute incoming traffic across EC2 Instances with Auto Scaling Group. This component defined the ALB listeners, target groups, and health checks to ensure efficient routing of requests to healthy instances.And aslso Secured Connection with AWS Certificate Manager.</p>
+
+<h2>Terraform Stage Management</h2>
+<p>We are using S3 Bucket to store Terraform state files for the purpose of collaboration, version control, and consistency across teams by providing a centralized location for storing and sharing infrastructure state. This prevents conflicts and enables concurrent modifications to infrastructure as code while maintaining integrity and facilitating rollbacks when necessary.</p>
+
+```terraform
+terraform {
+  backend "s3" {
+    bucket         = "your S3 Bucket name to store state file"
+    key            = "terraform.tfstate"  # Replace with a unique key for each configuration
+    region         = "ap-southeast-1"
+    encrypt        = true
+    acl            = "private"
+    #dynamodb_table = "terraform-lock"  # Optional: Use DynamoDB for state locking
+  }
+}
+```

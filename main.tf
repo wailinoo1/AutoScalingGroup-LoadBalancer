@@ -39,5 +39,5 @@ module "loadbalancer" {
   asg-alblogs3 = "asg-albnginxlogs-wlo"
   sg-id = module.autoscalinggroup.sg-id
   asg-tg-arn = module.autoscalinggroup.asg-tg-arn
-  certificate = "arn:aws:acm:ap-southeast-1:896836667748:certificate/31e9d408-5919-4cc4-b69e-2c1129b177e2"
+  certificate = "Your Certificate ARN"
 }

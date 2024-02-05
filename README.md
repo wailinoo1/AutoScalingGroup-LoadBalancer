@@ -9,12 +9,28 @@
 <p>The project aimed to deploy a resilient , scalable and reliable AWS architecture using Terraform Infrastructure As Code (IaC) principles to streamline resource provisioning and management. Leveraging Terraform, the infrastructure was divided into three modular components: Network, Server, and Load Balancer.</p>
 
 <h2>Pre-requisites</h2>
+<p><b>Credentials:</b> Need AWS Configure
 <p><b>S3 Bucket:</b> You need to have a S3 Bucket to store Terraform State Files</p>
 <p><b>Certificate:</b> You need to request a certificate in AWS Certificate Manager to associate with Application Load Balancer</p>
 
 <h2>Module Structure</h2>
 
 ![CHEESE](images/structure.jpg)
+
+<h2>Terraform Command</h2>
+
+```terraform
+cd Network && terraform init
+cd AutoScaling && terraform init
+cd Load Balancer && terraform init
+
+For Terraform Root Module:
+
+terraform init
+terraform validate
+terraform plan
+terraform apply --auto-approve
+```
 
 <h2>Network Module</h2>
 <p>The Network module was responsible for creating the foundational components of the architecture within the VPC. This included defining the VPC itself, along with the associated subnets, route tables, and Internet Gateway. Two public subnets were designated for the ALB and one for NAT Gateway, while two private subnets were established across different availability zones to host the Auto Scaling Group with Desired 2 EC2 Instances.</p>

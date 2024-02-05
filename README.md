@@ -50,7 +50,7 @@ module "network" {
 }
 ```
 
-<p>In this module , I've used Terraform Function <b>cidrsubnet</b> to create 4 subnets.This function will generate subnetes with "10.200.0.0/24", "10.200.1.0/24", "10.200.2.0/24", "10.200.3.0/24".</p>
+<p>In this module , I've used Terraform Function <b>cidrsubnet</b> for subnets.This function will generate subnetes with "10.200.0.0/24", "10.200.1.0/24", "10.200.2.0/24", "10.200.3.0/24".</p>
 <p>You can play subnet ranges as you wish for least subnet ranges</p>
 
 ```terraform

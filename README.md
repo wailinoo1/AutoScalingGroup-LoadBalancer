@@ -22,10 +22,6 @@ AWS Certificate Manager References : https://medium.com/@wailinoo.2012/requestin
 <h2>Terraform Command</h2>
 
 ```terraform
-cd Network && terraform init
-cd AutoScaling && terraform init
-cd Load Balancer && terraform init
-
 For Terraform Root Module:
 
 terraform init
